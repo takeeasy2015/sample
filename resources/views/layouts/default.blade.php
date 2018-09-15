@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    @include('layout._header')
+    @include('layouts._header')
 
     <div class="container">
         @yield('content')
-        @include('layout._footer')
+        @include('layouts._footer')
     </div>
 </body>
 </html>

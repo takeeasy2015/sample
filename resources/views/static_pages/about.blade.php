@@ -1,4 +1,4 @@
-@extends('layout.default')
+@extends('layouts.default')
 @section('title', '關於頁')
 
 @section('content')
