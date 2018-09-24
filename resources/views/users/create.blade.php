@@ -8,6 +8,8 @@
             <h5>註冊</h5>
         </div>
         <div class="panel-body">
+            @include('shared._errors')
+
             <form method="POST" action="{{ route('users.store') }}">
                 <!-- csrf token -->
                 {{ csrf_field() }}
