@@ -24,8 +24,18 @@ class UsersController extends Controller
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required|confirmed|min:6'
         ]);
+        
+        // 將用戶輸入的資訊存入資料庫
+        $user = User::create([
+            'name'  => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
 
-        return ;
+        // 用戶註冊成功後，在頁面頂部顯示註冊成功的訊息
+        session()->flash('success', '歡迎，您將在這裡開啟一段新的旅程。');
+
+        return redirect()->route('users.show', [$user->id]);
     }
 
 }
